@@ -1,0 +1,154 @@
+/*#include<iostream>
+#include<string>
+#include<vector>
+
+// Define a Student class
+class Student {
+    private:
+        std::string name; // Private attribute: student's name
+        int age; // Private attribute: student's age
+    public:
+        // Constructor
+        Student(std::string name, int age) {
+            this->name = name;
+            this->age = age;
+        }
+        
+        // Getter for name
+        std::string getName() {
+            return name;
+        }
+
+        // Getter for age
+        int getAge() {
+            return age;
+        }
+};
+
+int main() {
+    // Create a vector to hold Student objects
+    std::vector<Student> students;
+
+    // Add Student objects to the vector
+    students.push_back(Student("Alice", 20));
+    students.push_back(Student("Bob", 22));
+    students.push_back(Student("Charlie", 21));
+
+    // Loop through the vector and print student details
+    for(Student s : students) {
+        std::cout << "Name: " << s.getName() << ", Age: " << s.getAge() << std::endl;
+    }
+
+    // Conditional example: Find students older than 20
+    std::cout << "Students older than 20: " << std::endl;
+    for(Student s : students) {
+        if(s.getAge() > 20) {
+            std::cout << "Name: " << s.getName() << ", Age: " << s.getAge() << std::endl;
+        }
+    }
+
+    return 0;
+}
+
+#include <iostream>
+#include <fstream>
+#include <string>
+
+int main() {
+    // create an input file stream
+    std::ifstream inFile("input.txt");
+    if (!inFile) {
+        std::cerr << "Unable to open file input.txt" << std::endl;
+        return 1;   // return with error code
+    }
+    
+    // create an output file stream
+    std::ofstream outFile("output.txt");
+    if (!outFile) {
+        std::cerr << "Unable to open file output.txt" << std::endl;
+        return 1;   // return with error code
+    }
+
+    std::string line;
+    // read lines from the input file and write them to the output file
+    while (std::getline(inFile, line)) {
+        outFile << line << std::endl;
+    }
+
+    // always remember to close your files
+    inFile.close();
+    outFile.close();
+
+    return 0;
+}
+
+
+
+#include <iostream>
+#include <string>
+
+// Base class
+class Animal {
+    protected: // protected so derived classes can access
+        std::string name;
+        int age;
+    public:
+        // Constructor
+        Animal(std::string name, int age) {
+            this->name = name;
+            this->age = age;
+        }
+        
+        // Getter for name
+        std::string getName() {
+            return name;
+        }
+
+        // Getter for age
+        int getAge() {
+            return age;
+        }
+        
+        // Virtual function makes sure correct function gets called in polymorphic setup
+        virtual void makeSound() const {
+            std::cout << name << " makes a sound." << std::endl;
+        }
+};
+
+// Derived class
+class Dog : public Animal {
+    public:
+        // Constructor
+        Dog(std::string name, int age) : Animal(name, age) { }
+        
+        // Overriding the makeSound function
+        void makeSound() const override {
+            std::cout << name << " barks." << std::endl;
+        }
+};
+
+// Another derived class
+class Cat : public Animal {
+    public:
+        // Constructor
+        Cat(std::string name, int age) : Animal(name, age) { }
+        
+        // Overriding the makeSound function
+        void makeSound() const override {
+            std::cout << name << " meows." << std::endl;
+        }
+};
+
+int main() {
+    // Create an instance of Dog
+    Dog myDog("Rover", 5);
+    myDog.makeSound(); // Rover barks.
+
+    // Create an instance of Cat
+    Cat myCat("Whiskers", 3);
+    myCat.makeSound(); // Whiskers meows.
+
+    return 0;
+}
+
+*/
